@@ -18,9 +18,10 @@
 <meta property="og:image" content="http://yoursite.com/home/ziyan/photo/cutphoto/buildhexo-2.png">
 <meta property="og:image" content="http://yoursite.com/home/ziyan/photo/cutphoto/buildhexo-3.png">
 <meta property="og:image" content="http://yoursite.com/home/ziyan/photo/cutphoto/buildhexo-4.png">
+<meta property="og:image" content="http://yoursite.com/home/ziyan/photo/cutphoto/buildhexo-7.png">
 <meta property="og:image" content="http://yoursite.com/home/ziyan/photo/cutphoto/buildhexo-6.png">
 <meta property="article:published_time" content="2020-07-06T06:48:40.000Z">
-<meta property="article:modified_time" content="2020-07-06T06:57:51.499Z">
+<meta property="article:modified_time" content="2020-07-06T07:12:50.884Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/home/ziyan/photo/cutphoto/buildhexo-1.png">
@@ -98,11 +99,11 @@
 <p><strong>使用-v查看是否下载成功</strong></p>
 <hr>
 <p>##步骤二<br>####开始进行搭建<br>创建一个blog文件夹，后续博客的所有操作都是存在blog文件下的<br><img src="/home/ziyan/photo/cutphoto/buildhexo-3.png" alt="buildhexo-3"></p>
-<p>sudo hexo init  <em>初始化hexo</em><br>hexo s          <em>开始运行hexo，此时会获得一个端口号，本地可直接访问端口号进行上网</em><br><img src="/home/ziyan/photo/cutphoto/buildhexo-4.png" alt="buildhexo-4"><br>hexo n “XXX”    <em>new一篇名为XXX文章，并且此时会创建名为XXX的md文件</em><br><em>此时可以通过更改md文件，来更改网站的展示界面</em><br>vim XXX.md      <em>利用vim更改md文件<br><strong>回到blog目录下</strong><br>hexo clean      *更新后需要重新清理</em><br>hexo g          <em>重新生成</em><br>hexo s          <em>重新开始–本地可观察变化</em><br><em>部署到github上</em><br>在github下创建用户名.github.io仓库<br>cnpm install –save hexo-deployer-git  <em>下载git</em><br><em>下载后可能需要设置用户名和邮箱</em><br>git config –global user.name “XXXXX”<br>git config –global user.email “<a href="mailto:XX@xx.com">XX@xx.com</a>“  <em>输入自己的github的用户名和邮箱</em> </p>
+<p>sudo hexo init  <em>初始化hexo</em><br>hexo s          <em>开始运行hexo，此时会获得一个端口号，本地可直接访问端口号进行上网</em><br><img src="/home/ziyan/photo/cutphoto/buildhexo-4.png" alt="buildhexo-4"><br>hexo n “XXX”    <em>new一篇名为XXX文章，并且此时会创建名为XXX的md文件</em><br><em>此时可以通过更改md文件，来更改网站的展示界面</em><br>vim XXX.md      <em>利用vim更改md文件<br><strong>回到blog目录下</strong><br>hexo clean      *更新后需要重新清理</em><br>hexo g          <em>重新生成</em><br>hexo s          <em>重新开始–本地可观察变化</em><br><em>部署到github上</em><br>在github下创建用户名.github.io仓库<br><img src="/home/ziyan/photo/cutphoto/buildhexo-7.png" alt="buildhexo-7"><br>cnpm install –save hexo-deployer-git  <em>下载git</em><br><em>下载后可能需要设置用户名和邮箱</em><br>git config –global user.name “XXXXX”<br>git config –global user.email “<a href="mailto:XX@xx.com">XX@xx.com</a>“  <em>输入自己的github的用户名和邮箱</em> </p>
 <p>需要配置blog下的_config.yml文件<br><img src="/home/ziyan/photo/cutphoto/buildhexo-6.png" alt="buildhexo-6"><br>底部的<br>deploy:<br>  type:<br>更改为<br>deploy:<br>  type: git<br>  repo:<a href="https://github.com/ziyanxi12/ziyanxi12.github.io.git" target="_blank" rel="noopener">https://github.com/ziyanxi12/ziyanxi12.github.io.git</a><br>  branch:master</p>
 <p> hexo d        <em>部署到远端，推到ziyanxi12.github.io上</em></p>
 <hr>
-<p>###下载新主题<br>找到github上的主题<br>用git clone <a href="https://xxxxxxxxx.git" target="_blank" rel="noopener">https://xxxxxxxxx.git</a> theme/a   *克隆到theme的a目录下<br>更改_config.yml的theme:a</p>
+<p>###下载新主题<br>找到github上的主题<br>用git clone <a href="https://xxxxxxxxx.git" target="_blank" rel="noopener">https://xxxxxxxxx.git</a> themes/a   *克隆到theme的a目录下<br>更改_config.yml的theme:a</p>
 <p><strong>每次更新了界面都需要输入以下步骤</strong><br>hexo clean       <em>清理</em><br>hexo g        <em>生成</em><br>hexo s        <em>开始</em><br>hexo d        <em>推到远端</em></p>
 <hr>
 <p>##参考资源<br>跟着<a href="https://www.bilibili.com/video/BV1Yb411a7ty" target="_blank" rel="noopener">b站up主CodeSheep视频</a>一步一步操作</p>
@@ -111,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/06/%E5%88%9B%E5%BB%BA%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B/" data-id="ckca5lczh00016kghckogdop7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/06/%E5%88%9B%E5%BB%BA%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B/" data-id="ckca67ecj00013rghcnj5eb22" class="article-share-link">Share</a>
       
       
     </footer>
