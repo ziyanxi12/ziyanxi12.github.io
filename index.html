@@ -152,6 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-leetcode无重复字符的最长字串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/06/leetcode%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/">leetcode无重复字符的最长字串</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/06/leetcode%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/" class="archive-article-date">
+  	<time datetime="2020-07-06T13:14:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p><strong>题目描述</strong><br><img src="/home/ziyan/photo/leetcode.3-1.png" alt="leetcode.3-1"></p>
+<p><em>思路</em><br>从a[0]开始遍历，然后用一个容器存储下一个字符开始的字符串<br>判断容器内是否含有起始字符，并且判断容器内是否有重复字符<br>用容器的indexOf方法，可以返回某个字符在容器内第一次出现的pos<br>        lastIndexOf方法，可以返回某个字符在容器内最后一次出现的pos</p>
+<p>源码indexOf方法是从0开始遍历，lastIndexOf是从.length-1开始遍历<br><img src="/home/ziyan/photo/leetcode.3-2.1.png" alt="leetcode.3-2.1"><br><img src="/home/ziyan/photo/leetcode.3-2.2.png" alt="leetcode.3-2.2"></p>
+<hr>
+<hr>
+<p><em>代码</em><br>‘’’<br>     public int lengthOfLongestSubstring(String s) {<br>        //在一段长度内不允许重复出现字符<br>        //将String转换为char数组<br>        char[] a = s.toCharArray();<br>        //利用容器存储需要判断是否有重复的字符<br>        ArrayList<Character> temp = new ArrayList&lt;&gt;();<br>        int count=1,max=1;//计数和存储最大长度<br>        for(int i=0;i&lt;a.length;i++){<br>            count=1;//每换一个开头都需要重新计数<br>            temp.clear();//每换一个开头要清空容器的内容<br>            for(int j=i+1;j&lt;a.length;j++){<br>                temp.add(a[j]);//添加后面的字符<br>                System.out.println(i+” “+temp);<br>                if(a[j]==a[i]) break;//有相同就换开头<br>                //System.out.print(temp.indexOf(a[j]));<br>                //temp.indexOf(a) 返回容器中第一个a的位置<br>                //temp.lastIndexOf(a) 返回容器中最后一个a的位置<br>                if(temp.indexOf(a[j])!=temp.lastIndexOf(a[j])) break;<br>                //相同则表示该容器只有一个a<br>                if(temp.indexOf(a[j])==temp.lastIndexOf(a[j]))count++;<br>                if(count &gt; max) max = count;//更新max<br>            }<br>        }<br>        return max;<br>    }</p>
+<p>‘’’</p>
+<hr>
+<hr>
+<p><em>官方题解使用的是HashSet</em><br>用HashSet的性质，能够记录每个字符是否出现过</p>
+<hr>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/06/leetcode%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-创建我的博客过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
