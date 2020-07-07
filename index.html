@@ -152,6 +152,79 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-leetcode实现strStr" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/07/leetcode%E5%AE%9E%E7%8E%B0strStr/">leetcode实现strStr()</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/07/leetcode%E5%AE%9E%E7%8E%B0strStr/" class="archive-article-date">
+  	<time datetime="2020-07-07T11:00:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="实现strStr"><a href="#实现strStr" class="headerlink" title="实现strStr()"></a>实现strStr()</h3><h4 id="题目大意："><a href="#题目大意：" class="headerlink" title="题目大意："></a>题目大意：</h4><p>给定一个haystack字符串和一个needle字符串，在haystack字符串中找出needle字符串出现的第一个位置，不存在则返回-1.</p>
+<h3 id="通过题解学习了String类的substring方法"><a href="#通过题解学习了String类的substring方法" class="headerlink" title="通过题解学习了String类的substring方法"></a>通过题解学习了String类的substring方法</h3><p><img src="../images/leetcode.77-1.png" alt="substring源码"><br><img src="../images/leetcode.77-2.png" alt="substring源码"></p>
+<p>String substring(int pos){}<br>返回的是从pos开始的字符子串<br><em>例如：”hello world”.substring(4) = “o world”</em></p>
+<p>String substring(int begin,int end){}<br>返回的是从begin到end的字符子串<br>*例如：”hello world!”.substring(2,5) = “llo” 得到的字符串长度为end-begin  *</p>
+<hr>
+<hr>
+<p>*则此题可利用String的substring方法得到与needle长度相同的字符串<br>通过判断得到的字符串和needle字符串是否相同，来判断位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public int strStr(String haystack, String needle) &#123;</span><br><span class="line">    int L &#x3D; needle.length(), n &#x3D; haystack.length();</span><br><span class="line"></span><br><span class="line">    for (int start &#x3D; 0; start &lt; n - L + 1; ++start) &#123;</span><br><span class="line">      if (haystack.substring(start, start + L).equals(needle)) &#123;</span><br><span class="line">        return start;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return -1;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">作者：LeetCode</span><br><span class="line">链接：https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;implement-strstr&#x2F;solution&#x2F;shi-xian-strstr-by-leetcode&#x2F;</span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
+
+<hr>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/07/leetcode%E5%AE%9E%E7%8E%B0strStr/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-leetcode整数反转" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
