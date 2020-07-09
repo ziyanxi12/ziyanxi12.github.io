@@ -152,6 +152,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-leetcode最长回文字符串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/09/leetcode%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2/">leetcode最长回文字符串</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/09/leetcode%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="archive-article-date">
+  	<time datetime="2020-07-09T09:11:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个字符串s，找到s中最长的回文子串。</p>
+<p>回文字符串的特点在首尾部加或减相同的字符，依旧为回文字符串<br>一个字符为回文字符<br>两个相同的字符也是回文字符<br>即可用递归或动态规划</p>
+<hr>
+<h3 id="对动态规划的理解"><a href="#对动态规划的理解" class="headerlink" title="对动态规划的理解"></a>对动态规划的理解</h3><p>通过看一系列课程后，自己所认为的动态规划就是<br>在递归过程中，可能涉及到要处理相同的子问题，而导致程序重复计算相同的数据<br>减少运行时间和空间，就需要先从小到大将数据存储到数组，这样处理相同的就直接用内存中的数据</p>
+<p>例如：斐波那契数列数列<br> f(1)=1 f(2)=1<br>i&gt;2  f(i)=f(i-1)+f(i-2)<br>要计算<br>f(6) = f(5)+f(4)<br>f(5) = f(3)+f(4)<br>f(4) = f(3)+f(2) <em>此时f(4)在f(5)的计算中出现了，f(3)也在f(5)的计算中出现了，递归算法是需要先将f(5)全算完，但结果不会保存，则f(4)就重新计算了一遍</em></p>
+<p>利用公式f(i) = f(i-1) + f(i-2)将数值计算出来，存储到数组dp中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dp[0] &#x3D; 1;dp[1] &#x3D; 1;</span><br><span class="line">for(int i&#x3D;2;i&lt;50;i++)</span><br><span class="line">   dp[i]&#x3D;dp[i-1]+dp[i-2]</span><br></pre></td></tr></table></figure>
+<hr>
+<p>本题中的动态规划运用，当s为一个字符，返回true(是回文字符)<br>当s为两个字符，并且s.charAt[0]==s.charAt[1]，返回true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int n &#x3D; s.length();</span><br><span class="line">boolean[][] dp &#x3D; new boolean[n][n];</span><br><span class="line">for(int i&#x3D;0;i&lt;n;i++)</span><br><span class="line">    dp[i][i] &#x3D; true;   &#x2F;&#x2F;一个字符则返回true</span><br><span class="line">for(int i&#x3D;0;i&lt;n-1;i++)</span><br><span class="line">    if(s.charAt(i)&#x3D;&#x3D;s.charAt(i+1))</span><br><span class="line">        dp[i][i+1] &#x3D; true;  &#x2F;&#x2F;两个相同字符返回true</span><br><span class="line">for(int len&#x3D;3;len&lt;&#x3D;n;len++)&#123; &#x2F;&#x2F;从字符串长度为3开始</span><br><span class="line">    for(int i&#x3D;0;i&lt;n-len+1;i++)&#123;</span><br><span class="line">        if(s.charAt(i)&#x3D;&#x3D;s.charAt(len+i-1))&#123;</span><br><span class="line">            dp[i][len+i-1] &#x3D; dp[i+1][len+i-2]; &#x2F;&#x2F;当首尾相同时，就需要判断去掉首尾还是不是回文字符串</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+<hr>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/09/leetcode%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-leetcode实现strStr" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
